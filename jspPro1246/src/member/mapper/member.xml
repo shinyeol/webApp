@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+	<select id="list" resultType="member.dto.MemberDTO">
+		select * from ( 
+			select A.*, rownum as rn from ( 
+				select * from jb_member 
+				order by join_date 
+		) A 
+	) where rn between #{start} and #{end}
+	</select>
+
+	<insert id="insert">
+		INSERT INTO jb_member
+		(id, email, passwd, name, birth, sex, hp, addr, addrDetail, zip, agreeAd) 
+		VALUES(#{id}, #{email}, #{passwd}, #{name}, #{birth}, #{sex}
+		, #{hp}, #{addr}, #{addrDetail}, #{zip}, #{agreeAd})
+	</insert>
+	
+	<select id="loginCheck" resultType="member.dto.MemberDTO">
+		select * from jb_member 
+		where id=#{id}
+	</select>
+	
+	<select id="view" resultType="member.dto.MemberDTO">
+		select * from jb_member 
+		where id=#{id}
+	</select>
+	
+	<update id="update" parameterType="member.dto.MemberDTO">
+		update jb_member 
+		set name=#{name}, email=#{email}, passwd=#{passwd}, hp=#{hp}, birth=#{birth}
+		, sex=#{sex}, addr=#{addr}, addrDetail=#{addrDetail}, zip=#{zip}, agreeAd=#{agreeAd} 
+		where id=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete from jb_member 
+		where id=#{id}
+	</delete>
+	
+	<select id="member_count" resultType="int">
+		select count(*) from jb_member
+	</select>
+	
+	<select id="idCheck" resultType="String">
+		select id from jb_member 
+		where email=#{email} and name=#{name}
+	</select>
+	
+	<select id="passwdCheck" resultType="String">
+		select id from jb_member 
+		where email=#{email} and name=#{name} and id=#{id} 
+		and hp=#{hp}
+	</select>
+	
+	<update id="updatePasswd" parameterType="member.dto.MemberDTO">
+		update jb_member 
+		set passwd=#{passwd}
+		where id=#{id}
+	</update>
+</mapper>

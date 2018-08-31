@@ -1,0 +1,152 @@
+@CHARSET "UTF-8";
+
+/* join page  */
+
+.content-join {
+   color: gray;
+   width: 970px;
+}
+
+#termsAndConditions {
+   width: 100%;
+   height: 300px;
+   padding: 10px;
+   overflow: scroll;
+   border: 1px solid gray;
+   font-size: 13px;
+}
+.checkbox {
+   width: 20px;
+   height: 20px;
+}
+.table-join {
+   text-align: center;
+   width: 970px;
+}
+.confirmArea {
+   font-size: 13px;
+}
+.input-td {
+   height: 60px;
+   text-align: left;
+}
+.input-join {
+   background-color: #e1e9d1;
+   padding-left: 10px;
+   width: 460px;
+   height: 45px;
+   font-size: 14px;
+   border-style: none;
+   border-bottom: 1px dotted #BCCE98;
+}
+#birth {
+	background-color: #e1e9d1;
+	padding-left: 6px;
+    width: 385px;
+    height: 45px;
+    border-style: none;
+    font-size: 18px;
+    text-align: center;
+    color: gray;
+}
+.tr-radio-birthday {
+	color: gray;
+	background-color: #e1e9d1;
+	width: 460px;
+	height: 45px;
+   border-style: none;
+}
+.tr-radio-birthday label {
+   font-size: 14px;
+   padding-left: 6px;
+}
+.tr-radio-birthday {
+   text-align: left;
+}
+
+.div-checkbox {
+   width: 970px;
+   height: 45px;
+}
+.div-checkbox label {
+   font-size: 14px;
+}
+#joinMessage {
+   text-align: center;
+}
+
+
+/* join-result page  */
+
+.table-join-result {
+	text-align: center;
+	width: 970px;
+}
+
+/* join-result page  */
+
+.content-login {
+   color: gray;
+   width: 970px;
+   text-align: center;
+}
+
+/* member_list page  */
+
+#btnView {
+	padding: 7px 16px;
+	margin: 5px 0px;
+}
+#btnView:hover {
+    color: #977a5b;
+    background-color: white;
+    border: 2px solid #977a5b;
+}
+
+/* myinfo page  */
+#table-myinfo tr {
+	height: 60px;
+}
+
+#table-myinfo #passwd {
+	height: 26px;
+	background-color: #e1e9d1;
+	padding-left: 6px;
+	border: none;
+}
+
+#btnDelete:HOVER {
+	color: white;
+    background-color: #ff4242;
+    border: 2px solid #ff4242;
+}
+
+.table-myinfo {
+   text-align: center;
+   width: 100%;
+}
+.confirmArea {
+   font-size: 13px;
+}
+.input-td {
+   height: 60px;
+   text-align: left;
+}
+.input-myinfo1 {
+   background-color: #e1e9d1;
+   padding-left: 10px;
+   width: 300px;
+   height: 45px;
+   font-size: 14px;
+   border-style: none;
+   border-bottom: 1px dotted #BCCE98;
+}
+.input-myinfo2 {
+   background-color: #e1e9d1;
+   padding-left: 10px;
+   width: 420px;
+   height: 45px;
+   font-size: 14px;
+   border-style: none;
+   border-bottom: 1px dotted #BCCE98;
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="product">
+	<select id="productListPerPage" resultType="product.dto.ProductDTO">
+		select * from product_beans 
+		where p_option1 = #{p_option1} AND p_type=#{p_type} 
+		order by p_idx 
+	</select>
+	
+	<select id="mochaPortList" resultType="product.dto.ProductDTO">
+		select * from product_beans 
+		where p_option2 = #{p_option2} AND p_type=#{p_type} 
+		order by p_idx 
+	</select>
+	
+	<select id="productView" resultType="product.dto.ProductDTO">
+		select * from product_beans 
+		where p_idx=#{p_idx} 
+	</select>
+	
+	<select id="productManageList" resultType="product.dto.ProductDTO">
+		select * from product_beans 
+		where p_type = #{p_type} 
+		order by p_idx 
+	</select>	
+
+	<insert id="insert">
+		insert into product_beans
+			(p_idx, p_type, p_option1, p_option2, 
+			p_name, p_country_of_origin, p_price, p_point, 
+			p_size, p_product_date, p_img_main, p_img1, p_img2) 
+		values (
+			(select nvl(max(p_idx)+1,1) from product_beans), #{p_type}, #{p_option1}, #{p_option2},  
+			#{p_name}, #{p_country_of_origin}, #{p_price}, #{p_point}, 
+			#{p_size}, #{p_product_date}, #{p_img_main}, #{p_img1}, #{p_img2})
+	</insert>
+	
+	<delete id="delete">
+		delete from product_beans 
+		where p_idx=#{p_idx}
+	</delete>
+	
+	<select id="product_count" resultType="int">
+		select count(*) from product_beans 
+		where p_type=#{p_type}
+	</select>
+	
+	<update id="update" parameterType="product.dto.ProductDTO">
+		update product_beans set 
+			p_type=#{p_type}, p_option1=#{p_option1}, p_option2=#{p_option2}, 
+			p_name=#{p_name}, p_country_of_origin=#{p_country_of_origin}, 
+			p_price=#{p_price}, p_point=#{p_point}, p_size=#{p_size}, 
+			p_product_date=#{p_product_date}, p_img_main=#{p_img_main}, 
+			p_img1=#{p_img1}, p_img2=#{p_img2}  
+		where p_idx=#{p_idx}
+	</update>
+
+</mapper>

@@ -1,0 +1,141 @@
+@CHARSET "UTF-8";
+
+#border-content-subject {
+	text-decoration: none;
+	color: gray;
+}
+.table-board {
+	padding: 0px;
+	border-top: 1px solid gray;
+	text-align: center;
+	width: 100%;
+	font-size: 14px;
+	margin-bottom: 30px;
+}
+.table-board tr {
+	height: 30px;
+}
+#table-wrap {
+	padding: 0px;
+	list-style: none;
+}
+#table-wrap li {
+	list-style: none;
+}
+.table-wrap-header {
+	display: inline;
+	float: left;
+	height: 38px;
+	margin-bottom: 0px;
+}
+
+#btnList {
+	float: right;	
+}
+.icon-download {
+	height: 20px;
+	width: 20px;
+}
+/* view page */
+.board-content-wrap {
+	text-align: left;
+	border-top: 1px solid gray;
+	border-bottom: 1px solid gray;
+	padding: 40px 20px;
+}
+#btnEdit {
+	padding: 6px 16px;
+	margin: 10px 0px;
+}
+#btnEdit:hover {
+    color: #977a5b;
+    background-color: white;
+    border: 2px solid #977a5b;
+}
+#btnReply {
+	padding: 6px 16px;
+}
+#btnReply:hover {
+    color: #977a5b;
+    background-color: white;
+    border: 2px solid #977a5b;
+}
+#btn_commentSave {
+	padding: 2px 8px;
+	-webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+}
+#btn_commentSave:hover {
+	color: #977a5b;
+	font-weight: bold;
+    background-color: white;
+    border: 2px solid #977a5b;
+}
+
+/* comment */
+.comment-table-wrap {
+	border-bottom: 1px solid #c0c0c0;
+	padding: 20px 5px;
+}
+
+.comment-header-wrap div {
+	margin-right: 30px;
+	display: inline;
+}
+.comment-header-writer {
+	font-weight: bold; 
+	color: black;
+	font-size: 12px;
+}
+.comment-header-btn #comment_btnDel {
+	padding: 2px 7px;
+	margin: 10px 0px;
+}
+.comment-header-btn #comment_btnDel:hover {
+    color: #977a5b;
+    background-color: white;
+    border: 2px solid #977a5b;
+}
+.comment-content-wrap {
+	padding: 10px 5px;
+	font-size: 13px;	
+}
+.comment-input-passwd {
+	background-color: #e1e9d1;
+	padding-left: 5px;
+	font-size: 12px;
+	border-style: none;
+	text-align: left;
+	width: 100px;
+	height: 22px;
+	border-right-width: 2px;
+	margin-right: 10px;"
+}
+/* write page  */
+
+.write-input {
+	width: 100%;
+	background-color: #e1e9d1;
+	padding-left: 10px;
+	height: 40px;
+	font-size: 13px;
+	border-style: none;
+	text-align: left;
+}
+#bbs_select {
+	font-weight: bold;
+	font-size: 14px;
+	color: gray;
+}
+
+#btnCancel {
+	padding: 10px 28px;
+}
+#btnCancel:HOVER {
+	background-color: #BCCE98;
+}
+#btnSave {
+	padding: 10px 28px;
+}
+
+

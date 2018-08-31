@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cart">
+	<select id="list" parameterType="String" resultType="cart.dto.CartDTO">
+		select c_idx, m.id, name, p.p_idx, p_name, c.p_type, 
+		amount, price, c_img, p_price*amount money 
+		from jb_member m, cart c, product_beans p 
+		where m.id=c.id and p.p_idx=c.p_idx and m.id=#{id, jdbcType=VARCHAR} 
+		order by c_post_date
+	</select>
+	
+	<select id="sumMoney" resultType="int">
+		SELECT NVL(sum(price*amount), 0) money 
+		FROM product_beans p, cart c 
+		WHERE c.p_idx = p.p_idx 
+		AND id = #{id, jdbcType=VARCHAR}
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO cart
+    	(c_idx, id, p_idx, amount, c_img, price, p_type) 
+		VALUES 
+		(cart_seq.NEXTVAL, #{id}, #{p_idx}, #{amount}, #{c_img}, #{price}, #{p_type})
+	</insert>
+	
+	<delete id="delete">
+		DELETE FROM cart 
+		WHERE c_idx = #{c_idx}
+	</delete>
+	
+	<select id="update">
+		update cart 
+		set amount = #{amount} 
+		where c_idx = #{c_idx} 
+	</select>
+	
+</mapper>

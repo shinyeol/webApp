@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<typeAliases>
+	</typeAliases>
+	
+	<environments default="">
+		<environment id="">
+			<transactionManager type="JDBC" />
+			<dataSource type="JNDI">
+				<property name="data_source" value="java:comp/env/jdbc/OracleDB" />
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="member/mapper/member.xml" />
+		<mapper resource="cart/mapper/cart.xml" />
+		<mapper resource="product/mapper/product.xml" />
+		<mapper resource="board/mapper/board.xml" />
+		<mapper resource="boardComment/mapper/boardComment.xml" />
+	</mappers>
+</configuration>
+
+
+
+
+
