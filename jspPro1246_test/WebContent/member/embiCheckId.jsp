@@ -15,6 +15,12 @@
 				document.form_login.id.focus();
 				return;
 			}
+			var regId = /^[a-z0-9][a-z0-9]{4,19}$/;
+			if (!regId.test(id)) {
+				alert("유효하지 않은 아이디입니다.");
+				document.joinForm.id.focus();
+				return;
+			}
 			document.form_login.action="${path}/member_servlet/embiCheckId.do";
 			document.form_login.submit();
 		}
@@ -38,7 +44,7 @@
 	
 	<form name="form_login" method="post">
 		<div class="input-td" style="text-align: center;">
-			<input class="input-join" id="id" name="id" placeholder="아이디" value="${param.id}">
+			<input class="input-join" id="id" name="id" placeholder="아이디 (영문/숫자 포함 4자 이상 12자 이내)" value="${param.id}">
 		</div>
 			<c:if test="${param.message == 'embi' }">
 			  	<div id="msg">사용중인 아이디입니다.</div>

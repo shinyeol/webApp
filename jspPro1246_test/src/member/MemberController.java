@@ -203,7 +203,7 @@ public class MemberController extends HttpServlet {
 				if(name=="") {
 					message = "error";
 					message = URLEncoder.encode(message, "utf-8");
-					page = "/member/myinfo.jsp?message="+message;
+					page = "/myPage/myinfo.jsp?message="+message;
 				} else {
 					System.out.println(name+"님 개인정보 수정에 접근");
 					page = "/myPage/myinfo_view.jsp";

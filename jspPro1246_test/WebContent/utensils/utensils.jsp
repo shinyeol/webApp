@@ -91,7 +91,7 @@
 									
 <div class="product-list" id="wapper-utensils_tea">
 	<h2>차</h2>
-	<div id="utensils_syrup"></div>
+	<div id="utensils_tea"></div>
 </div>
 
 <div class="product-list" id="wapper-utensils_syrup">

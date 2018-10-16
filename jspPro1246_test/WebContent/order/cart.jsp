@@ -61,13 +61,6 @@
 		<c:forEach var="dto" items="${dto}">
 			<tr align="center">
 				<td>
-<script>
-function cart_delete() {
-	if(confirm("삭제하시겠습니까?")) {
-		location.href = "${path}/cart_servlet/delete.do?c_idx=${dto.c_idx}";
-	}
-}			
-</script>
 					<img src="${path}/images/${dto.c_img}" style="width:90px;height:90px;">
 				</td>
 				<td class="txt_left">
@@ -97,7 +90,7 @@ function cart_delete() {
 				</td>
 				<td>
 					<a href="#" class="btn-Type4" style="margin: 3px;">바로주문</a>
-					<a href="#" onclick="cart_delete()" id="btnDelete" class="btn-Type4" style="margin: 3px;">삭제</a>
+					<a onclick="return confirm('장바구니에서 삭제하시겠습니까?')" href="${path}/cart_servlet/delete.do?c_idx=${dto.c_idx}" id="btnDelete" class="btn-Type4" style="margin: 3px;">삭제</a>
 				</td>
 			</tr>
 		</c:forEach>
